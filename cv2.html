@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amisha Sharma | Social Media Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --mint: rgb(192, 225, 210);
+            --sage: rgb(229, 238, 228);
+            --cream: rgb(246, 244, 232);
+            --blush: #434E78;
+            --text: #ffffff;
+            --dark: #2d2d2d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .handwritten {
+            font-family: 'Caveat', cursive;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(246, 244, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgb(229, 238, 228);
+        }
+
+        .nav-name {
+            font-weight: 900;
+            color: var(--dark);
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .btn-connect {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: var(--dark);
+            border: 2px solid var(--blush);
+            border-radius: 8px;
+            padding: 0.4rem 1.1rem;
+            transition: background 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-connect:hover {
+            background: var(--blush);
+            color: #fff;
+        }
+
+        .hero-section {
+            background: var(--mint);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 999px;
+            padding: 0.45rem 1.4rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #3a5a4e;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-resume {
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.22);
+            color: #1e3a30;
+            font-weight: 800;
+            padding: 0.85rem 1.6rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            min-width: 210px;
+            height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease;
+        }
+
+        .btn-resume:hover {
+            background: var(--blush);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(67, 78, 120, 0.25);
+        }
+
+        .hero-pill {
+            background: rgba(255, 255, 255, 0.22);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 12px;
+            padding: 0.85rem 1.6rem;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #1e3a30;
+            white-space: nowrap;
+            min-width: 210px;
+            height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease;
+        }
+
+        .hero-pill:hover {
+            background: var(--blush);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(67, 78, 120, 0.25);
+        }
+
+        .about-section {
+            background: var(--sage);
+        }
+
+        .services-section {
+            background: var(--cream);
+        }
+
+        .card-mint {
+            background: var(--mint);
+        }
+
+        .card-sage {
+            background: var(--sage);
+        }
+
+        .card-blush {
+            background: var(--blush);
+        }
+
+        .card-cream {
+            background: #e8e5ce;
+        }
+
+        .service-card {
+            border-radius: 18px;
+            padding: 1.7rem 1.5rem 1.6rem;
+            transition: transform 0.22s, box-shadow 0.22s;
+            color: var(--dark);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-num {
+            font-family: 'Caveat', cursive;
+            font-size: 2.9rem;
+            line-height: 1;
+            opacity: 0.55;
+        }
+
+        .reels-section {
+            background: var(--mint);
+        }
+
+        .reel-placeholder {
+            background: rgba(255, 255, 255, 0.45);
+            border: 1.5px dashed rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            aspect-ratio: 9/16;
+            min-width: 175px;
+            max-width: 210px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #2e4a40;
+            font-size: 0.78rem;
+            font-weight: 700;
+            gap: 0.5rem;
+            opacity: 0.85;
+            transition: opacity 0.2s, background 0.2s;
+        }
+
+        .reel-placeholder:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .reels-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .reels-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .reels-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+
+        footer {
+            background: var(--blush);
+        }
+
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .footer-contact a:hover {
+            opacity: 0.65;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="max-w-6xl mx-auto h-[70px] px-6 py-4 flex items-center justify-between">
+            <span class="nav-name">Amisha Sharma</span>
+            <a href="mailto:amisha@gmail.com" class="btn-connect">Let's connect!</a>
+        </div>
+    </nav>
+
+    <section class="hero-section ">
+        <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+
+            <div class="mb-7">
+                <span class="hero-tag">✦ Hello, I'm Amisha Sharma</span>
+            </div>
+
+            <h1 class="font-black leading-none mb-5"
+                style="font-size:clamp(3rem,10vw,6.8rem); color:#1e3a30; letter-spacing:-0.02em">
+                Social Media<br>
+                <span style="color:#fff">Manager</span>
+            </h1>
+
+            <p class="handwritten mb-10" style="font-size:clamp(1.2rem,2.8vw,1.75rem); color:#3a5a4e">
+                content · design · planning ////
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#" class="btn-resume">Resume ↗</a>
+                <a href="tel:+91123456789" class="hero-pill">📞 +91 123456789</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=example@gmail.com&su=Social%20Media%20Inquiry"
+                    target="_blank" rel="noopener" class="hero-pill">✉️ example@gmail.com</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+            <div class="flex flex-col md:flex-row md:items-start md:gap-16">
+
+                <div class="mb-8 md:mb-0 md:w-44 flex-shrink-0">
+                    <span class="handwritten text-5xl font-bold" style="color:var(--blush)">About Me</span>
+                    <div class="mt-3 text-2xl select-none tracking-widest" style="color:var(--blush); opacity:0.35">· ·
+                        ·</div>
+                </div>
+
+                <div class="flex-1">
+                    <h2 class="font-extrabold text-2xl sm:text-3xl mb-4" style="color:var(--dark)">
+                        Hi, My name is Amisha Sharma,
+                    </h2>
+                    <p class="text-base sm:text-lg leading-relaxed" style="color:#4a4a4a; max-width:68ch">
+                        I'm a Social Media Manager who loves helping brands grow online in a way that feels genuine,
+                        creative, and impactful.
+                        <br>
+                        I work closely with businesses to build strong social media presences through thoughtful
+                        strategy, engaging content,
+                        eye-catching graphics, and video editing that keeps people interested. For me, social media is
+                        not just about posting
+                        regularly. It’s about creating content that connects with people, builds trust, and leaves a
+                        lasting impression.
+                        <br>
+                        From Instagram and Facebook to Pinterest, YouTube, and beyond, I make sure your brand shows up
+                        consistently and
+                        professionally wherever your audience spends their time.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+            <div class="flex flex-wrap items-baseline gap-3 mb-10">
+                <h2 class="font-black text-4xl sm:text-5xl" style="color:var(--dark)">What I do</h2>
+                <span class="handwritten text-2xl" style="color:var(--blush)">// nine things</span>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    
+                <div class="service-card" style="background:#d7e8dc;">
+                    <div class="service-num">1.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Digital Marketing</h3>
+                    <p class="text-sm" style="opacity:0.78">
+                        Managing daily content scheduling through Meta Business Suite, creating and optimizing ad campaigns
+                        in Facebook Ads Manager, and executing lead generation strategies designed to increase reach,
+                        engagement, and measurable business growth.
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#5a5678; color:#fff;">
+                    <div class="service-num">2.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Instagram</h3>
+                    <p class="text-sm" style="opacity:0.9">
+                        Creating strategic Instagram content plans, managing posting schedules, producing engaging reels and
+                        stories, and building visually strong brand identities that grow loyal audiences organically.
+                    </p>
+                </div>
+    
+                <!-- NEW CONTENT WRITING CARD -->
+                <div class="service-card" style="background:#e7dfc8;">
+                    <div class="service-num">3.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Content Writing</h3>
+                    <p class="text-sm" style="opacity:0.78">
+                        Writing SEO-friendly blogs, website copy, social media content, marketing materials,
+                        carousel text, and brand messaging that helps businesses communicate clearly, improve
+                        discoverability, drive audience engagement, and build a strong, consistent online presence
+                        across digital platforms.
+
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#dde7dc;">
+                    <div class="service-num">4.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Figma</h3>
+                    <p class="text-sm" style="opacity:0.78">
+                        Designing modern branded templates, polished social media creatives, and professional visual assets
+                        in Figma that strengthen brand consistency and elevate overall digital presentation.
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#e4dcc3;">
+                    <div class="service-num">5.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Graphics</h3>
+                    <p class="text-sm" style="opacity:0.78">
+                        Creating polished graphics, branded post designs, carousel layouts, and story content that ensures
+                        your social media presence remains cohesive, professional, and highly memorable.
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#4f5f59; color:#fff;">
+                    <div class="service-num">6.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Video Editing</h3>
+                    <p class="text-sm" style="opacity:0.9">
+                        Editing high-performing reels, shorts, and promotional videos that capture attention instantly,
+                        maintain engagement, and deliver content tailored for modern social audiences.
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#d7e8dc;">
+                    <div class="service-num">7.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Facebook</h3>
+                    <p class="text-sm" style="opacity:0.78">
+                        Managing Facebook business pages through consistent content creation, strategic audience engagement,
+                        and optimized posting that helps brands build visibility and stronger customer connections.
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#5a5678; color:#fff;">
+                    <div class="service-num">8.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Pinterest & YouTube</h3>
+                    <p class="text-sm" style="opacity:0.9">
+                        Building and maintaining Pinterest and YouTube strategies that generate long-term searchable
+                        traffic, strengthen discoverability, and expand your brand’s digital reach.
+                    </p>
+                </div>
+    
+                <div class="service-card" style="background:#dde7dc;">
+                    <div class="service-num">9.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Other Platforms</h3>
+                    <p class="text-sm" style="opacity:0.78">
+                        Adapting content strategies for LinkedIn, X, Threads, and emerging platforms while maintaining
+                        professional quality, audience relevance, and strong brand consistency.
+                    </p>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="reels-section py-16" style="background:var(--mint);">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="mb-10 text-center">
+                <h2 class="font-black text-4xl sm:text-5xl mb-3" style="color:#2d2d2d">Content & Video Work</h2>
+                <p class="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed" style="color:#55615b">
+                    I enjoy creating short-form content that feels engaging, creative, and natural to watch. From social
+                    media reels to promotional edits, I focus on making content that captures attention quickly while
+                    still feeling authentic, polished, and visually memorable.
+                </p>
+            </div>
+
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mb-12">
+
+                <div
+                    class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <img src="ami/pics/1.png" alt="Creative Work 1" class="w-full h-auto block bg-white">
+                </div>
+
+                <div
+                    class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <img src="ami/pics/2.png" alt="Creative Work 2" class="w-full h-auto block bg-white">
+                </div>
+
+                <div
+                    class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <img src="ami/pics/3.png" alt="Creative Work 3" class="w-full h-auto block bg-white">
+                </div>
+
+                <div
+                    class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <img src="ami/pics/4.png" alt="Creative Work 4" class="w-full h-auto block bg-white">
+                </div>
+
+                <div
+                    class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <img src="ami/pics/5.png" alt="Creative Work 5" class="w-full h-auto block bg-white">
+                </div>
+
+                <div
+                    class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <img src="ami/pics/6.png" alt="Creative Work 6" class="w-full h-auto block bg-white">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="py-16" style="background:var(--sage);">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="mb-10 text-center">
+            <h3 class="font-black text-3xl sm:text-4xl mb-3" style="color:#2d2d2d">
+                Featured Video Content
+            </h3>
+
+            <p class="text-sm sm:text-base max-w-3xl mx-auto leading-relaxed" style="color:#55615b">
+                A selection of reels, edits, and short-form content created for social media platforms
+                with a focus on engagement, storytelling, and clean visual presentation.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <div
+                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                <video controls class="w-full aspect-[9/16] bg-black">
+                    <source src="ami/videos/1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div
+                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                <video controls class="w-full aspect-[9/16] bg-black">
+                    <source src="ami/videos/2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div
+                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                <video controls class="w-full aspect-[9/16] bg-black">
+                    <source src="ami/videos/3.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div
+                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                <video controls class="w-full aspect-[9/16] bg-black">
+                    <source src="ami/videos/4.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div
+                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                <video controls class="w-full aspect-[9/16] bg-black">
+                    <source src="ami/videos/5.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <footer class="py-16">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <p class="text-sm font-semibold mb-3" style="color:rgba(255,255,255,0.55)">Well, that's the end!</p>
+
+            <h2 class="font-black leading-tight mb-10" style="font-size:clamp(1.9rem,5.5vw,3.6rem); color:#fff">
+                Thanks for taking the<br>time to review my<br>portfolio!
+            </h2>
+
+            <div class="border-t pt-6 footer-contact flex flex-col sm:flex-row items-center justify-between gap-4 text-sm"
+                style="border-color:rgba(255,255,255,0.25)">
+                <a href="tel:+911234567890">📞 +91 1234567890</a>
+                <a href="mailto:amisha@gmail.com?subject=Portfolio%20Inquiry">✉️ amisha@gmail.com</a>
+                <a href="https://www.linkedin.com/in/amishasharma" target="_blank" rel="noopener">🔗
+                    linkedin.com/in/amishasharma</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
