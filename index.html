@@ -142,22 +142,6 @@
             background: var(--cream);
         }
 
-        .card-mint {
-            background: var(--mint);
-        }
-
-        .card-sage {
-            background: var(--sage);
-        }
-
-        .card-blush {
-            background: var(--blush);
-        }
-
-        .card-cream {
-            background: #e8e5ce;
-        }
-
         .service-card {
             border-radius: 18px;
             padding: 1.7rem 1.5rem 1.6rem;
@@ -177,46 +161,171 @@
             opacity: 0.55;
         }
 
-        .reels-section {
+        /* Stats Section Styling */
+        .stats-section {
             background: var(--mint);
         }
 
-        .reel-placeholder {
-            background: rgba(255, 255, 255, 0.45);
-            border: 1.5px dashed rgba(255, 255, 255, 0.7);
-            border-radius: 16px;
-            aspect-ratio: 9/16;
-            min-width: 175px;
-            max-width: 210px;
+        .stat-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Experience timeline */
+        .timeline-section {
+            background: var(--sage);
+        }
+
+        /* Hero Primary Button Styling */
+.btn-hero-primary {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: var(--blush);
+    color: #ffffff;
+    font-weight: 800;
+    padding: 0.85rem 1.6rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(67, 78, 120, 0.2);
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(67, 78, 120, 0.35);
+    background: #353e60;
+}
+
+/* Updated Responsive Pill Buttons */
+.hero-pill {
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #1e3a30;
+    white-space: nowrap;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+}
+
+.hero-pill:hover {
+    background: #ffffff;
+    color: var(--blush);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 640px) {
+    .hero-actions-container {
+        width: 100%;
+    }
+    .btn-hero-primary,
+    .hero-pill {
+        width: 100%; /* Full width cards on small phone screens for easy tapping */
+        height: 48px;
+    }
+}
+
+        .timeline-row {
+            border-left: 3px solid var(--blush);
+            padding-left: 1.75rem;
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-row:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-row::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 4px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--blush);
+            border: 3px solid var(--sage);
+        }
+
+        .timeline-date {
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--blush);
+        }
+
+        /* Brands strip */
+        .brands-section {
+            background: var(--cream);
+        }
+
+        .brands-grid {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+        }
+
+        .brand-chip {
+            background: #fff;
+            border: 1px solid #e3ddc4;
+            border-radius: 14px;
+            padding: 0.6rem 1.15rem 0.6rem 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #4a4a4a;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            transition: all 0.25s ease;
+        }
+
+        .brand-chip:hover {
+            transform: translateY(-3px);
+            border-color: #d8c99b;
+            box-shadow: 0 8px 20px rgba(74, 74, 74, 0.08);
+        }
+
+        .brand-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--blush);
+            color: #fff;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 1.15rem;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            color: #2e4a40;
-            font-size: 0.78rem;
-            font-weight: 700;
-            gap: 0.5rem;
-            opacity: 0.85;
-            transition: opacity 0.2s, background 0.2s;
         }
 
-        .reel-placeholder:hover {
-            opacity: 1;
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        .reels-scroll::-webkit-scrollbar {
-            height: 4px;
-        }
-
-        .reels-scroll::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .reels-scroll::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 4px;
+        .reels-section {
+            background: var(--mint);
         }
 
         footer {
@@ -242,11 +351,11 @@
     <nav>
         <div class="max-w-6xl mx-auto h-[70px] px-6 py-4 flex items-center justify-between">
             <span class="nav-name">Amisha Sharma</span>
-            <a href="mailto:amisha@gmail.com" class="btn-connect">Let's connect!</a>
+            <a href="mailto:amishaoninstagram@gmail.com" class="btn-connect">Let's connect!</a>
         </div>
     </nav>
 
-    <section class="hero-section ">
+    <section class="hero-section">
         <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
 
             <div class="mb-7">
@@ -260,15 +369,37 @@
             </h1>
 
             <p class="handwritten mb-10" style="font-size:clamp(1.2rem,2.8vw,1.75rem); color:#3a5a4e">
-                content · design · planning ////
+                content · reels · design · community
             </p>
 
-            <div class="flex flex-wrap items-center gap-4">
-                <a href="#" class="btn-resume">Resume ↗</a>
-                <a href="tel:+91123456789" class="hero-pill">📞 +91 123456789</a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=example@gmail.com&su=Social%20Media%20Inquiry"
-                    target="_blank" rel="noopener" class="hero-pill">✉️ example@gmail.com</a>
-            </div>
+            <div class="hero-actions-container flex flex-wrap items-center gap-3 sm:gap-4 max-w-full">
+    <!-- Main Resume Call-to-Action -->
+    <a href="/Amisha_Sharma_Resume.pdf" target="_blank" class="btn-hero-primary">
+        <span>Resume</span>
+        <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+    </a>
+
+    <!-- Phone Call Button (Instant Tap to Call on Mobile) -->
+    <a href="tel:+918700296987" class="hero-pill flex-1 sm:flex-none justify-center">
+        <span class="mr-2">📞</span>
+        <span class="font-bold">+91 87002 96987</span>
+    </a>
+
+    <!-- Email Direct Link -->
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amishaoninstagram@gmail.com&su=Social%20Media%20Inquiry"
+       target="_blank" rel="noopener" class="hero-pill flex-1 sm:flex-none justify-center">
+        <span class="mr-2">✉️</span>
+        <span class="truncate">amishaoninstagram@gmail.com</span>
+    </a>
+
+    <!-- SubStack Link -->
+    <a href="https://yuji4win.substack.com/" target="_blank" rel="noopener" class="hero-pill justify-center">
+        <span class="mr-1.5">✍️</span>
+        <span>SubStack</span>
+    </a>
+</div>
 
         </div>
     </section>
@@ -285,22 +416,18 @@
 
                 <div class="flex-1">
                     <h2 class="font-extrabold text-2xl sm:text-3xl mb-4" style="color:var(--dark)">
-                        Hi, My name is Amisha Sharma,
+                        Hi, my name is Amisha Sharma,
                     </h2>
                     <p class="text-base sm:text-lg leading-relaxed" style="color:#4a4a4a; max-width:68ch">
-                        I'm a Social Media Manager who loves helping brands grow online in a way that feels genuine,
-                        creative, and impactful.
-                        <br>
-                        I work closely with businesses to build strong social media presences through thoughtful
-                        strategy, engaging content,
-                        eye-catching graphics, and video editing that keeps people interested. For me, social media is
-                        not just about posting
-                        regularly. It’s about creating content that connects with people, builds trust, and leaves a
-                        lasting impression.
-                        <br>
-                        From Instagram and Facebook to Pinterest, YouTube, and beyond, I make sure your brand shows up
-                        consistently and
-                        professionally wherever your audience spends their time.
+                        I'm a Social Media Manager and content creator based in Delhi, with a B.A. from Delhi
+                        University. I started out running fan and media accounts on Instagram and Facebook, and
+                        over the past few years that grew into managing content, reels, and brand presence for
+                        <span style="font-weight:800; color:var(--blush)">50+ brands</span> across jewellery,
+                        fashion, wellness, education, and food & lifestyle.
+                        <br><br>
+                        I handle the full loop myself, planning content calendars, writing captions and hashtags,
+                        designing posts in Canva, and editing reels in CapCut and Alight Motion, so brands get a
+                        consistent, professional presence without juggling five different freelancers.
                     </p>
                 </div>
 
@@ -312,114 +439,307 @@
         <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div class="flex flex-wrap items-baseline gap-3 mb-10">
                 <h2 class="font-black text-4xl sm:text-5xl" style="color:var(--dark)">What I do</h2>
-                <span class="handwritten text-2xl" style="color:var(--blush)">// nine things</span>
+                <span class="handwritten text-2xl" style="color:var(--blush)">// the skill set</span>
             </div>
-    
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    
+
                 <div class="service-card" style="background:#d7e8dc;">
                     <div class="service-num">1.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Digital Marketing</h3>
                     <p class="text-sm" style="opacity:0.78">
-                        Managing daily content scheduling through Meta Business Suite, creating and optimizing ad campaigns
-                        in Facebook Ads Manager, and executing lead generation strategies designed to increase reach,
-                        engagement, and measurable business growth.
+                        Managing daily content scheduling through Meta Business Suite, creating and optimizing
+                        ad campaigns in Facebook Ads Manager, and executing lead generation strategies designed
+                        to increase reach, engagement, and measurable business growth.
                     </p>
                 </div>
-    
+
                 <div class="service-card" style="background:#5a5678; color:#fff;">
                     <div class="service-num">2.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Instagram</h3>
                     <p class="text-sm" style="opacity:0.9">
-                        Creating strategic Instagram content plans, managing posting schedules, producing engaging reels and
-                        stories, and building visually strong brand identities that grow loyal audiences organically.
+                        Building content calendars, reel concepts, and story series that keep a brand's
+                        Instagram active and on-brand every week, from jewellery launches for Ooak Jewels
+                        and Maheswari Jewelers to wellness content for Sparsh Ayurveda and The Jungle Therapy.
                     </p>
                 </div>
-    
-                <!-- NEW CONTENT WRITING CARD -->
+
                 <div class="service-card" style="background:#e7dfc8;">
                     <div class="service-num">3.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Content Writing</h3>
                     <p class="text-sm" style="opacity:0.78">
-                        Writing SEO-friendly blogs, website copy, social media content, marketing materials,
-                        carousel text, and brand messaging that helps businesses communicate clearly, improve
-                        discoverability, drive audience engagement, and build a strong, consistent online presence
-                        across digital platforms.
+                        Writing captions, hashtag sets, carousel copy, and promotional content that matches
+                        each brand's voice, feels natural, and encourages audiences to engage instead of
+                        scrolling past.
+                    </p>
+                </div>
 
-                    </p>
-                </div>
-    
-                <div class="service-card" style="background:#dde7dc;">
-                    <div class="service-num">4.</div>
-                    <h3 class="font-extrabold text-base mt-3 mb-1">Figma</h3>
-                    <p class="text-sm" style="opacity:0.78">
-                        Designing modern branded templates, polished social media creatives, and professional visual assets
-                        in Figma that strengthen brand consistency and elevate overall digital presentation.
-                    </p>
-                </div>
-    
                 <div class="service-card" style="background:#e4dcc3;">
-                    <div class="service-num">5.</div>
+                    <div class="service-num">4.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Graphics</h3>
                     <p class="text-sm" style="opacity:0.78">
-                        Creating polished graphics, branded post designs, carousel layouts, and story content that ensures
-                        your social media presence remains cohesive, professional, and highly memorable.
+                        Creating branded post designs, carousel layouts, and story graphics in Canva and
+                        Picsart to keep every social feed visually consistent, polished, and instantly
+                        recognizable.
                     </p>
                 </div>
-    
+
                 <div class="service-card" style="background:#4f5f59; color:#fff;">
-                    <div class="service-num">6.</div>
+                    <div class="service-num">5.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Video Editing</h3>
                     <p class="text-sm" style="opacity:0.9">
-                        Editing high-performing reels, shorts, and promotional videos that capture attention instantly,
-                        maintain engagement, and deliver content tailored for modern social audiences.
+                        Editing high-performing reels, Shorts, and promotional videos that capture attention,
+                        maintain engagement, and deliver content tailored for modern social media audiences.
                     </p>
                 </div>
-    
+
                 <div class="service-card" style="background:#d7e8dc;">
-                    <div class="service-num">7.</div>
+                    <div class="service-num">6.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Facebook</h3>
                     <p class="text-sm" style="opacity:0.78">
-                        Managing Facebook business pages through consistent content creation, strategic audience engagement,
-                        and optimized posting that helps brands build visibility and stronger customer connections.
+                        Managing Facebook pages through consistent posting, community engagement, and
+                        promotional campaigns using the same strategies that helped grow brands like
+                        Treevesto, Roselo, and True &amp; False India.
                     </p>
                 </div>
-    
+
                 <div class="service-card" style="background:#5a5678; color:#fff;">
-                    <div class="service-num">8.</div>
-                    <h3 class="font-extrabold text-base mt-3 mb-1">Pinterest & YouTube</h3>
+                    <div class="service-num">7.</div>
+                    <h3 class="font-extrabold text-base mt-3 mb-1">Pinterest &amp; YouTube</h3>
                     <p class="text-sm" style="opacity:0.9">
-                        Building and maintaining Pinterest and YouTube strategies that generate long-term searchable
-                        traffic, strengthen discoverability, and expand your brand’s digital reach.
+                        Expanding brand visibility on Pinterest and YouTube with content designed for
+                        long-term discoverability, search visibility, and sustained audience growth.
                     </p>
                 </div>
-    
+
                 <div class="service-card" style="background:#dde7dc;">
-                    <div class="service-num">9.</div>
+                    <div class="service-num">8.</div>
                     <h3 class="font-extrabold text-base mt-3 mb-1">Other Platforms</h3>
                     <p class="text-sm" style="opacity:0.78">
-                        Adapting content strategies for LinkedIn, X, Threads, and emerging platforms while maintaining
-                        professional quality, audience relevance, and strong brand consistency.
+                        Adapting content strategies for LinkedIn, X, Threads, and emerging platforms while
+                        maintaining brand consistency, audience relevance, and a professional standard across
+                        every channel.
                     </p>
                 </div>
-    
+
             </div>
         </div>
     </section>
 
-    <section class="reels-section py-16" style="background:var(--mint);">
+    <!-- NEW SECTION: Meta Ads & Campaign Analytics -->
+   <!-- Paid Ads & Impact Section with Screenshot Lightbox -->
+<section class="stats-section py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-wrap items-baseline gap-3 mb-4">
+            <h2 class="font-black text-4xl sm:text-5xl" style="color:var(--dark)">Paid Ads & Impact</h2>
+            <span class="handwritten text-2xl" style="color:#3a5a4e">// Meta Ads Manager Performance</span>
+        </div>
+        <p class="text-base sm:text-lg mb-10" style="color:#2e4a40; max-width:65ch">
+            Driven by targeted Meta Ad campaigns, content strategy, and precise audience segmentation across India, South Africa, and international markets.
+        </p>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div class="stat-card">
+                <span class="block text-4xl font-black mb-1" style="color:#1e3a30">1.9M+</span>
+                <span class="block font-extrabold text-sm uppercase tracking-wide mb-2" style="color:var(--blush)">Total Content Views</span>
+                <p class="text-xs leading-relaxed" style="color:#4a4a4a">
+                    Over 1.86M views generated directly through Meta ad campaigns with high completion rates.
+                </p>
+            </div>
+
+            <div class="stat-card">
+                <span class="block text-4xl font-black mb-1" style="color:#1e3a30">840+</span>
+                <span class="block font-extrabold text-sm uppercase tracking-wide mb-2" style="color:var(--blush)">High-Intent Leads</span>
+                <p class="text-xs leading-relaxed" style="color:#4a4a4a">
+                    Achieved ultra-low cost-per-lead down to <strong style="color:#1e3a30">₹4.05/lead</strong> on key campaigns.
+                </p>
+            </div>
+
+            <div class="stat-card">
+                <span class="block text-4xl font-black mb-1" style="color:#1e3a30">3,200+</span>
+                <span class="block font-extrabold text-sm uppercase tracking-wide mb-2" style="color:var(--blush)">Direct Inquiries</span>
+                <p class="text-xs leading-relaxed" style="color:#4a4a4a">
+                    Inbound messaging conversations started across WhatsApp/Instagram at low CPL.
+                </p>
+            </div>
+
+            <div class="stat-card">
+                <span class="block text-4xl font-black mb-1" style="color:#1e3a30">19.8K+</span>
+                <span class="block font-extrabold text-sm uppercase tracking-wide mb-2" style="color:var(--blush)">Interactions</span>
+                <p class="text-xs leading-relaxed" style="color:#4a4a4a">
+                    Deep engagement with 26.5K 3-second views and 4+ days of total organic & ad watch time.
+                </p>
+            </div>
+        </div>
+
+        <!-- Dashboard Visual Screenshots -->
+        <div class="mb-10">
+            <h3 class="font-extrabold text-xl mb-4" style="color:#1e3a30">✦ Live Dashboard Highlights</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <a href="#img1" class="group relative block overflow-hidden rounded-2xl border border-white/80 shadow-md transition-all hover:-translate-y-1 hover:shadow-xl">
+                    <img src="ami/pics/signal-2026-08-06-11-20-23-920_002.png" alt="Meta Ads Manager Dashboard" class="w-full h-44 object-cover object-top">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-sm">
+                        🔍 Click to expand dashboard
+                    </div>
+                </a>
+                <a href="#img2" class="group relative block overflow-hidden rounded-2xl border border-white/80 shadow-md transition-all hover:-translate-y-1 hover:shadow-xl">
+                    <img src="ami/pics/signal-2026-08-06-11-20-00-754_002.png" alt="Audience Demographics" class="w-full h-44 object-cover object-top">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-sm">
+                        🔍 Click to expand audience stats
+                    </div>
+                </a>
+                <a href="#img3" class="group relative block overflow-hidden rounded-2xl border border-white/80 shadow-md transition-all hover:-translate-y-1 hover:shadow-xl">
+                    <img src="ami/pics/signal-2026-08-06-11-20-17-212_002.png" alt="Reach Metrics" class="w-full h-44 object-cover object-center">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-sm">
+                        🔍 Click to expand view metrics
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/50 border border-white/80 backdrop-blur-sm">
+            <h3 class="font-extrabold text-lg mb-2" style="color:#1e3a30">Audience Targeting Insights</h3>
+            <p class="text-sm leading-relaxed" style="color:#3a5a4e">
+                Focused demographic targeting across primary age groups (25–34 making up the largest segment at ~35%). Strong international footprint spanning <strong>India (54.8%)</strong>, <strong>South Africa (32%)</strong>, UAE, Thailand, and US markets.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Pure CSS Lightbox Overlay (No JS required) -->
+<style>
+    .lightbox { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox:target { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+</style>
+
+<a href="#_" class="lightbox" id="img1">
+    <img src="ami/pics/signal-2026-08-06-11-20-23-920_002.png" alt="Ads Dashboard Proof">
+</a>
+<a href="#_" class="lightbox" id="img2">
+    <img src="ami/pics/signal-2026-08-06-11-20-00-754_002.png" alt="Audience Demographics Proof">
+</a>
+<a href="#_" class="lightbox" id="img3">
+    <img src="ami/pics/signal-2026-08-06-11-20-17-212_002.png" alt="Reach Metrics Proof">
+</a>
+
+    <section class="timeline-section py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-wrap items-baseline gap-3 mb-12">
+                <h2 class="font-black text-4xl sm:text-5xl" style="color:var(--dark)">Experience</h2>
+                <span class="handwritten text-2xl" style="color:var(--blush)">// where I've worked</span>
+            </div>
+
+            <div class="max-w-2xl">
+
+                <div class="timeline-row">
+                    <div class="timeline-date mb-1">2023 - 2025</div>
+                    <h3 class="font-extrabold text-lg mb-1">Freelance Social Media Manager</h3>
+                    <p class="text-md mb-2" style="color:#191a1a">
+                        Independently managed social media for freelance clients across luxury salons, resorts,
+                        cafes, gyms, interior design, astrology, and sports brands.
+                    </p>
+                    <ul class="list-disc pl-5 text-md space-y-1" style="color:#191a1a">
+                        <li>Owned the full workflow end-to-end: content calendars, graphics, reels, captions,
+                            and posting for every client</li>
+                        <li>Adapted tone and visual style across very different industries, from wellness to
+                            hospitality to sport</li>
+                        <li>Handled day-to-day community replies and inquiries to keep engagement steady
+                            between clients</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-date mb-1">2022 - 2023</div>
+                    <h3 class="font-extrabold text-lg mb-1">Creative Graphics Intern, Branding Agency (Delhi)</h3>
+                    <p class="text-md mb-2" style="color:#191a1a">
+                        Completed an internship in creative graphics at a Delhi-based branding agency.
+                    </p>
+                    <ul class="list-disc pl-5 text-md space-y-1" style="color:#191a1a">
+                        <li>Supported client projects with branded visual assets and creative graphics</li>
+                        <li>Learned agency-level design workflow, brand guidelines, and client handoff</li>
+                        <li>Built foundational skills that carried directly into freelance client work</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-date mb-1">2021 - 2022</div>
+                    <h3 class="font-extrabold text-lg mb-1">Social Media Manager, Reiki Healing Foundation</h3>
+                    <p class="text-md mb-2" style="color:#191a1a">
+                        Ran social media end-to-end for the foundation's Instagram and Facebook pages.
+                    </p>
+                    <ul class="list-disc pl-5 text-md space-y-1" style="color:#191a1a">
+                        <li>Planned and scheduled content to keep both pages consistently active</li>
+                        <li>Managed community engagement: replying to comments, messages, and inquiries</li>
+                        <li>Wrote captions and content lines suited to a wellness-focused audience</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-date mb-1">2018 - 2021</div>
+                    <h3 class="font-extrabold text-lg mb-1">Independent Content Creator</h3>
+                    <p class="text-md mb-2" style="color:#191a1a">
+                        Ran and grew personal media/fan accounts for various artists for 3 years - where it
+                        all started.
+                    </p>
+                    <ul class="list-disc pl-5 text-md space-y-1" style="color:#191a1a">
+                        <li>Built early skills in content planning, editing, and audience growth from scratch</li>
+                        <li>Learned what makes content get shared and saved, not just scrolled past</li>
+                        <li>Used this foundation to move into paid brand work across 12+ brands from 2021 onward</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="flex flex-wrap items-baseline gap-3 mb-5">
+                <h2 class="font-black text-4xl sm:text-5xl" style="color:var(--dark)">
+                    Brands I've worked with
+                </h2>
+            </div>
+
+            <p class="text-base sm:text-lg mb-10" style="color:#191a1a; max-width:60ch">
+                12+ brands across fashion, jewellery, wellness, education, and lifestyle
+                have trusted me with their social media, including:
+            </p>
+
+            <div class="brands-grid">
+                <span class="brand-chip"><span class="brand-dot">T</span>Treevesto</span>
+                <span class="brand-chip"><span class="brand-dot">S</span>SoulStrike</span>
+                <span class="brand-chip"><span class="brand-dot">O</span>Ooak Jewels</span>
+                <span class="brand-chip"><span class="brand-dot">V</span>Velvet Imperial</span>
+                <span class="brand-chip"><span class="brand-dot">M</span>Maheswari Jewelers</span>
+                <span class="brand-chip"><span class="brand-dot">V</span>Vinod Sarraf</span>
+                <span class="brand-chip"><span class="brand-dot">T</span>True & False India</span>
+                <span class="brand-chip"><span class="brand-dot">R</span>Roselo</span>
+                <span class="brand-chip"><span class="brand-dot">S</span>Sparsh Ayurveda</span>
+                <span class="brand-chip"><span class="brand-dot">M</span>Manobhav Arts</span>
+                <span class="brand-chip"><span class="brand-dot">P</span>Pratham TestPrep</span>
+                <span class="brand-chip"><span class="brand-dot">J</span>The Jungle Therapy</span>
+                <span class="brand-chip"><span class="brand-dot">J</span>Just Crushed</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="reels-section py-16 md:py-20">
         <div class="max-w-6xl mx-auto px-6">
 
             <div class="mb-10 text-center">
                 <h2 class="font-black text-4xl sm:text-5xl mb-3" style="color:#2d2d2d">Content & Video Work</h2>
-                <p class="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed" style="color:#55615b">
-                    I enjoy creating short-form content that feels engaging, creative, and natural to watch. From social
-                    media reels to promotional edits, I focus on making content that captures attention quickly while
-                    still feeling authentic, polished, and visually memorable.
+                <p class="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed" style="color:#191a1a">
+                    I enjoy creating short-form content that feels engaging, creative, and natural to watch.
+                    From social media reels to promotional edits, I focus on making content that captures
+                    attention quickly while still feeling authentic, polished, and visually memorable.
                 </p>
             </div>
 
-            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mb-12">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mb-4">
 
                 <div
                     class="break-inside-avoid overflow-hidden rounded-3xl shadow-xl border border-[#d6e1d7] bg-white/75 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
@@ -455,60 +775,60 @@
         </div>
     </section>
 
-<section class="py-16" style="background:var(--sage);">
-    <div class="max-w-6xl mx-auto px-6">
+    <section class="py-16 md:py-20" style="background:var(--sage);">
+        <div class="max-w-6xl mx-auto px-6">
 
-        <div class="mb-10 text-center">
-            <h3 class="font-black text-3xl sm:text-4xl mb-3" style="color:#2d2d2d">
-                Featured Video Content
-            </h3>
+            <div class="mb-10 text-center">
+                <h3 class="font-black text-3xl sm:text-4xl mb-3" style="color:#2d2d2d">
+                    Featured Video Content
+                </h3>
 
-            <p class="text-sm sm:text-base max-w-3xl mx-auto leading-relaxed" style="color:#55615b">
-                A selection of reels, edits, and short-form content created for social media platforms
-                with a focus on engagement, storytelling, and clean visual presentation.
-            </p>
+                <p class="text-sm sm:text-base max-w-3xl mx-auto leading-relaxed" style="color:#191a1a">
+                    A selection of reels, edits, and short-form content created for social media platforms
+                    with a focus on engagement, storytelling, and clean visual presentation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+                <div
+                    class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <video controls class="w-full aspect-[9/16] bg-black">
+                        <source src="ami/videos/1.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div
+                    class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <video controls class="w-full aspect-[9/16] bg-black">
+                        <source src="ami/videos/2.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div
+                    class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <video controls class="w-full aspect-[9/16] bg-black">
+                        <source src="ami/videos/3.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div
+                    class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <video controls class="w-full aspect-[9/16] bg-black">
+                        <source src="ami/videos/4.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div
+                    class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
+                    <video controls class="w-full aspect-[9/16] bg-black">
+                        <source src="ami/videos/5.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-
-            <div
-                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
-                <video controls class="w-full aspect-[9/16] bg-black">
-                    <source src="ami/videos/1.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div
-                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
-                <video controls class="w-full aspect-[9/16] bg-black">
-                    <source src="ami/videos/2.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div
-                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
-                <video controls class="w-full aspect-[9/16] bg-black">
-                    <source src="ami/videos/3.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div
-                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
-                <video controls class="w-full aspect-[9/16] bg-black">
-                    <source src="ami/videos/4.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div
-                class="rounded-3xl overflow-hidden shadow-xl border border-[#d6e1d7] bg-white/80 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300">
-                <video controls class="w-full aspect-[9/16] bg-black">
-                    <source src="ami/videos/5.mp4" type="video/mp4">
-                </video>
-            </div>
-
-        </div>
-    </div>
-</section>
+    </section>
 
     <footer class="py-16">
         <div class="max-w-6xl mx-auto px-6">
@@ -521,10 +841,11 @@
 
             <div class="border-t pt-6 footer-contact flex flex-col sm:flex-row items-center justify-between gap-4 text-sm"
                 style="border-color:rgba(255,255,255,0.25)">
-                <a href="tel:+911234567890">📞 +91 1234567890</a>
-                <a href="mailto:amisha@gmail.com?subject=Portfolio%20Inquiry">✉️ amisha@gmail.com</a>
-                <a href="https://www.linkedin.com/in/amishasharma" target="_blank" rel="noopener">🔗
-                    linkedin.com/in/amishasharma</a>
+                <a href="tel:+918700296987">📞 87002 96987</a>
+                <a href="mailto:amishaoninstagram@gmail.com?subject=Portfolio%20Inquiry">✉️
+                    amishaoninstagram@gmail.com</a>
+                <!-- <a href="https://www.linkedin.com/in/amishasharma" target="_blank" rel="noopener">🔗
+                    linkedin.com/in/amishasharma</a> -->
             </div>
 
         </div>
