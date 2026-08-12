@@ -332,6 +332,102 @@
     box-shadow: 0 6px 14px rgba(67, 78, 120, 0.25);
 }
 
+        /* Table of Contents */
+.toc-wrap {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 1.75rem;
+}
+
+.toc-scroll {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+}
+
+.toc-card {
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+}
+
+.toc-card:hover {
+    background: var(--blush);
+    border-color: var(--blush);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(67, 78, 120, 0.25);
+}
+
+.toc-num {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--blush);
+    opacity: 0.65;
+    flex-shrink: 0;
+    transition: color 0.25s ease;
+}
+
+.toc-card:hover .toc-num {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.toc-emoji {
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.toc-label {
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: #1e3a30;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.25s ease;
+}
+
+.toc-card:hover .toc-label {
+    color: #fff;
+}
+
+/* Responsive: tablet */
+@media (max-width: 900px) {
+    .toc-scroll {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: mobile — horizontal swipe row instead of wrapping grid */
+@media (max-width: 640px) {
+    .toc-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.7rem;
+        padding-bottom: 0.5rem;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+    .toc-scroll::-webkit-scrollbar {
+        height: 4px;
+    }
+    .toc-scroll::-webkit-scrollbar-thumb {
+        background: rgba(67, 78, 120, 0.35);
+        border-radius: 4px;
+    }
+    .toc-card {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        min-width: 150px;
+    }
+}
+
         .brand-dot {
             width: 30px;
             height: 30px;
@@ -379,104 +475,97 @@
     </nav>
 
     <section class="hero-section">
-        <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+    <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
 
-            <div class="mb-7">
-                <span class="hero-tag">✦ Hello, I'm Amisha Sharma</span>
-            </div>
-
-            <h1 class="font-black leading-none mb-5"
-                style="font-size:clamp(3rem,10vw,6.8rem); color:#1e3a30; letter-spacing:-0.02em">
-                Social Media<br>
-                <span style="color:#fff">Manager</span>
-            </h1>
-
-            <p class="handwritten mb-10" style="font-size:clamp(1.2rem,2.8vw,1.75rem); color:#3a5a4e">
-                content · reels · design · community
-            </p>
-
-            <div class="hero-actions-container flex flex-wrap items-center gap-3 sm:gap-4 max-w-full">
-    <!-- Main Resume Call-to-Action -->
-    <a href="/portfolio/Amisha_Sharma_Resume.pdf" target="_blank" class="btn-hero-primary">
-        <span>Resume</span>
-        <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-        </svg>
-    </a>
-
-    <!-- Phone Call Button (Instant Tap to Call on Mobile) -->
-    <a href="tel:+918700296987" class="hero-pill flex-1 sm:flex-none justify-center">
-        <span class="mr-2">📞</span>
-        <span class="font-bold">+91 87002 96987</span>
-    </a>
-
-    <!-- Email Direct Link -->
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amishaoninstagram@gmail.com&su=Social%20Media%20Inquiry"
-       target="_blank" rel="noopener" class="hero-pill flex-1 sm:flex-none justify-center">
-        <span class="mr-2">✉️</span>
-        <span class="truncate">amishaoninstagram@gmail.com</span>
-    </a>
-
-    <!-- SubStack Link -->
-    <a href="https://Amiyaps.substack.com/" target="_blank" rel="noopener" class="hero-pill justify-center">
-        <span class="mr-1.5">✍️</span>
-        <span>Check out Substack</span>
-    </a>
-
-    <!-- Scroll to Featured Video Content -->
-    <a href="#featured-videos" class="hero-pill justify-center">
-        <span class="mr-1.5">🎬</span>
-        <span>Check out featured videos</span>
-    </a>
-</div>
-
+        <div class="mb-7">
+            <span class="hero-tag">✦ Hello, I'm Amisha Sharma</span>
         </div>
 
-         <div class="mt-5">
-                <p class="handwritten mb-3" style="font-size:1.2rem; color:#3a5a4e">jump straight to →</p>
-                <div class="flex flex-wrap gap-2.5">
-                    <a href="#cat-cafe" class="video-jump-chip">🍽️ Cafe</a>
-                    <a href="#cat-jewellery" class="video-jump-chip">💍 Jewellery</a>
-                    <a href="#cat-ayurveda" class="video-jump-chip">🌿 Ayurveda</a>
-                    <a href="#cat-salons" class="video-jump-chip">💄 Salons</a>
-                    <a href="#cat-sports" class="video-jump-chip">🏆 Sports</a>
-                    <a href="#cat-travel" class="video-jump-chip">✈️ Travel</a>
-                    <a href="#cat-clothing" class="video-jump-chip">👗 Clothing</a>
-                    <a href="#cat-spiritual" class="video-jump-chip">🕉️ Spiritual</a>
-                </div>
+        <h1 class="font-black leading-none mb-5"
+            style="font-size:clamp(3rem,10vw,6.8rem); color:#1e3a30; letter-spacing:-0.02em">
+            Social Media<br>
+            <span style="color:#fff">Manager</span>
+        </h1>
+
+        <p class="handwritten mb-10" style="font-size:clamp(1.2rem,2.8vw,1.75rem); color:#3a5a4e">
+            content · reels · design · community
+        </p>
+
+        <div class="hero-actions-container flex flex-wrap items-center gap-3 sm:gap-4 max-w-full">
+            <a href="/portfolio/Amisha_Sharma_Resume.pdf" target="_blank" class="btn-hero-primary">
+                <span>Resume</span>
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
+            <a href="tel:+918700296987" class="hero-pill flex-1 sm:flex-none justify-center">
+                <span class="mr-2">📞</span>
+                <span class="font-bold">+91 87002 96987</span>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amishaoninstagram@gmail.com&su=Social%20Media%20Inquiry"
+               target="_blank" rel="noopener" class="hero-pill flex-1 sm:flex-none justify-center">
+                <span class="mr-2">✉️</span>
+                <span class="truncate">amishaoninstagram@gmail.com</span>
+            </a>
+            <a href="https://Amiyaps.substack.com/" target="_blank" rel="noopener" class="hero-pill justify-center">
+                <span class="mr-1.5">✍️</span>
+                <span>Check out Substack</span>
+            </a>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc-wrap mt-14">
+            <div class="flex items-baseline gap-3 mb-5">
+                <span class="handwritten text-3xl" style="color:#1e3a30">Jump to a category</span>
+                <span class="text-sm font-bold" style="color:#3a5a4e; opacity:0.75">// video portfolio index</span>
             </div>
-    </section>
 
-    <section class="about-section">
-        <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
-            <div class="flex flex-col md:flex-row md:items-start md:gap-16">
-
-                <div class="mb-8 md:mb-0 md:w-44 flex-shrink-0">
-                    <span class="handwritten text-5xl font-bold" style="color:var(--blush)">About Me</span>
-                    <div class="mt-3 text-2xl select-none tracking-widest" style="color:var(--blush); opacity:0.35">· ·
-                        ·</div>
-                </div>
-
-                <div class="flex-1">
-                    <h2 class="font-extrabold text-2xl sm:text-3xl mb-4" style="color:var(--dark)">
-                        Hi, my name is Amisha Sharma,
-                    </h2>
-                    <p class="text-base sm:text-lg leading-relaxed" style="color:#4a4a4a; max-width:68ch">
-                        I'm a Social Media Manager and content creator based in Delhi, with a B.A. from Delhi
-                        University. I started out running fan and media accounts on Instagram and Facebook, and
-                        over the past few years that grew into managing content, reels, and brand presence for
-                        <span style="font-weight:800; color:var(--blush)">50+ brands</span> across jewellery,
-                        fashion, wellness, education, and food & lifestyle.
-                        <br><br>
-                        I handle the full loop myself, planning content calendars, writing captions and hashtags,
-                        designing posts in video editing softwares, so brands get a
-                        consistent, professional presence without juggling five different freelancers.
-                    </p>
-                </div>
-
+            <div class="toc-scroll">
+                <a href="#cat-cafe" class="toc-card">
+                    <span class="toc-num">01</span>
+                    <span class="toc-emoji">🍽️</span>
+                    <span class="toc-label">Cafe</span>
+                </a>
+                <a href="#cat-jewellery" class="toc-card">
+                    <span class="toc-num">02</span>
+                    <span class="toc-emoji">💍</span>
+                    <span class="toc-label">Jewellery</span>
+                </a>
+                <a href="#cat-ayurveda" class="toc-card">
+                    <span class="toc-num">03</span>
+                    <span class="toc-emoji">🌿</span>
+                    <span class="toc-label">Ayurveda</span>
+                </a>
+                <a href="#cat-salons" class="toc-card">
+                    <span class="toc-num">04</span>
+                    <span class="toc-emoji">💄</span>
+                    <span class="toc-label">Salons</span>
+                </a>
+                <a href="#cat-sports" class="toc-card">
+                    <span class="toc-num">05</span>
+                    <span class="toc-emoji">🏆</span>
+                    <span class="toc-label">Sports</span>
+                </a>
+                <a href="#cat-travel" class="toc-card">
+                    <span class="toc-num">06</span>
+                    <span class="toc-emoji">✈️</span>
+                    <span class="toc-label">Travel</span>
+                </a>
+                <a href="#cat-clothing" class="toc-card">
+                    <span class="toc-num">07</span>
+                    <span class="toc-emoji">👗</span>
+                    <span class="toc-label">Clothing</span>
+                </a>
+                <a href="#cat-spiritual" class="toc-card">
+                    <span class="toc-num">08</span>
+                    <span class="toc-emoji">🕉️</span>
+                    <span class="toc-label">Spiritual</span>
+                </a>
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
     <section class="services-section">
         <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
@@ -682,7 +771,7 @@
             </div>
 
             <!-- Food -->
-            <div class="mb-12">
+            <div id="cat-cafe" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">🍽️ Cafe</span>
                 </h4>
@@ -728,7 +817,7 @@
             </div>
 
              <!-- Jewellery -->
-            <div class="mb-12">
+            <div id="cat-jewellery" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">💍 Jewellery</span>
                 </h4>
@@ -753,7 +842,7 @@
                 </div>
             </div>
 
-              <div class="mb-12">
+              <div id="cat-ayurveda" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">🌿 Ayurveda</span>
                 </h4>
@@ -779,7 +868,7 @@
             </div>
 
             <!-- Beauty -->
-            <div class="mb-12">
+            <div id"cat-salons" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">💄 Salons</span>
                 </h4>
@@ -798,7 +887,7 @@
             </div>
 
             <!-- Sports -->
-            <div class="mb-12">
+            <div id="cat-sports" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">🏆 Sports</span>
                 </h4>
@@ -823,7 +912,7 @@
             </div>
 
             <!-- Travel -->
-            <div class="mb-12">
+            <div id="cat-travel" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">✈️ Travel &amp; Resorts</span>
                 </h4>
@@ -843,7 +932,7 @@
             </div>
 
             <!-- Clothing -->
-            <div class="mb-12">
+            <div id="cat-clothing" class="mb-12">
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">👗 Clothing</span>
                 </h4>
@@ -864,7 +953,7 @@
             </div>
 
             <!-- Spiritual -->
-            <div>
+            <div id="cat-spiritual" >
                 <h4 class="font-extrabold text-lg mb-4 flex items-center gap-2" style="color:var(--blush)">
                     <span class="handwritten text-2xl">🕉️ Spiritual</span>
                 </h4>
