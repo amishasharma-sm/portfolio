@@ -1106,6 +1106,31 @@
     
 
         <script>
+            // Load video on scroll only
+
+            const lazyVideos = document.querySelectorAll('video.video-dynamic');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const v = entry.target;
+            if (entry.isIntersecting) {
+                if (v.preload !== 'metadata' && v.readyState === 0) {
+                    v.preload = 'metadata';
+                }
+            }
+        });
+    }, { rootMargin: '200px 0px' });
+
+    lazyVideos.forEach(function (v) {
+        v.preload = 'none';
+        observer.observe(v);
+        v.addEventListener('loadedmetadata', function () {
+            if (v.videoWidth && v.videoHeight) {
+                v.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight;
+            }
+        });
+    });
+
         // Dynamically match each video tile's aspect ratio to its actual video dimensions
         // (some clips are 9:16, some 16:9, some square) once metadata loads.
         document.querySelectorAll('video.video-dynamic').forEach(function (v) {
